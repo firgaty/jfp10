@@ -1,3 +1,6 @@
+import sys
+from sg import *
+
 def read(str):
 	lignes = str.split("\n")
 	grid= []
@@ -10,11 +13,18 @@ def read(str):
 				tab.append(0)
 		grid.append(tab)
 	
-	commande = lignes[5].split(" ")
-	if commande[0] == "GET":
-		GET(grid, commande[1], commande[2])
-	elif commande[0] == "SET":
-		SET(grid, commande[1], commande[2], commande[3])
-	elif commande[0] == "CLIC":
-		CLIC(grid, commande[1], commande[2])
+	res = ""
+	for i in range(5, len(lignes)):
+		commande = lignes[i].split(" ")
+		if commande[0] == "GET":
+			res = GET(grid, int(commande[1]), int(commande[2]))
+		elif commande[0] == "SET":
+			res = SET(grid, int(commande[1]), int(commande[2]), int(commande[3]))
+	print(res)
+
+lines = ""
+for line in sys.stdin:
+  lines += line
+
+read(lines)
 

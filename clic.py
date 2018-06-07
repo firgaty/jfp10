@@ -5,8 +5,7 @@ def isGroup (grid, x, y):
           (x < 4 and grid[y][x+1]==grid[y][x+1]))
 
 
-def click (grid, x, y):
-  print(isGroup(grid,x,y))
+def CLIC (grid, x, y):
   if isGroup(grid, x, y) and grid[y][x] != 0 and grid[y][x] < 9:
     grid[y][x] += 1
 
