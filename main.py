@@ -12,7 +12,7 @@ def read(str):
 	
 	commande = lignes[5].split(" ")
 	if commande[0] == "GET":
-		GET(grid, commande[1], commande[2])
+		GET(grid, commande[1]), commande[2])
 	elif commande[0] == "SET":
 		SET(grid, commande[1], commande[2], commande[3])
 	elif commande[0] == "CLIC":
