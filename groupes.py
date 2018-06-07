@@ -2,6 +2,9 @@
 
 import erase
 
+def isInBoundBis(x, y) :
+    return x >= 0 and x < 5 and y >=0 and y < 5
+
 def groupes (T) :
     # Copy of the array with a bool added
     T2 = []    
@@ -19,15 +22,15 @@ def splitGroupes (T) :
     grps = []
     for j in range(5) :
         for i in range(5) :
-            if(T[y][x][1] == False) :
+            if(T[j][i][1] == False) :
                 grp = []
-                getGroupe (T, grp, val, x, y)
+                getGroupe (T, grp, T[j][i][0], i, j)
                 grps.append(grp)
     
     return grps
         
 def getGroupe (T, grp, val, x, y) :
-    if(not isInBound(x, y)) : 
+    if(not isInBoundBis(x, y)) : 
         return
     if(T[y][x][1] != True and T[y][x][0] == val) :
         grp.append([x, y])
@@ -40,6 +43,6 @@ def getGroupe (T, grp, val, x, y) :
 
 
      
-test = [[1,2,3,4,1], [1,1,1,1,1], [2,2,2,2,2], [1,1,1,2,1], [1,2,3,1,2]]
-
-print (groupes(test))
+#test = [[1,2,3,4,1], [1,1,1,1,1], [2,2,2,2,2], [1,1,1,2,1], [1,2,3,1,2]]
+#
+#print (groupes(test))
