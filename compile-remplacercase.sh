@@ -1,2 +1,2 @@
-echo "python3 main.py" > afficherpos.exe
-chmod +x afficherpos.exe
+echo "python3 main.py" > remplacercase.exe
+chmod +x remplacercase.exe
