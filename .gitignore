@@ -1,1 +1,3 @@
-afficherpos.exe
+*.exe
+*.pyc
+__pycache__/

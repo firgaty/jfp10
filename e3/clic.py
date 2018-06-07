@@ -6,6 +6,7 @@ Created on Thu Jun  7 11:24:11 2018
 """
 
 from util import *
+from compact import *
 
 def erase (T, x, y) :
     val = T[y][x] - 1
@@ -38,5 +39,6 @@ def CLIC (grid, x, y):
     if isGroup(grid, x, y) and grid[y][x] != 0 and grid[y][x] < 9:
         grid[y][x] += 1
         erase(grid, x, y)
+        compact(grid)
     return toString(grid)
 
