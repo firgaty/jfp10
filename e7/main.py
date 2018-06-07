@@ -31,7 +31,7 @@ def read(str):
         grid.append(tab)
 	
     res = ""
-    if len(lignes) == 6:
+    if len(lignes) == 5:
         choisir_coup(grid)
     i = 5
     while i < len(lignes):	
